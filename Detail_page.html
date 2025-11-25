@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retroplaces</title>
+    <link rel="stylesheet" href="css/Detail_page.css">
+</head>
+<body>
+    <nav class="topnav">  
+        <a href="/" class="nav-brand">RETROPLACE</a>
+        <a href="/" class="nav-link">Home</a>
+        <a href="/search" class="nav-link">Search</a>
+        <a href="/All_products" class="nav-link">All Product</a>
+        <a href="#" onclick="signOut()" class="nav-link">Logout</a>
+    </nav>
+
+    <div class="product-container">
+        <div class="product-image">
+            <!-- Product image will be loaded dynamically -->
+            <img id="product-image" src="" alt="Product Image">
+        </div>
+        <div class="product-details">
+            <h1 id="product-title">Product A</h1>
+            <div class="product-price" id="product-price">THB xxx</div>
+            <div class="product-description" id="product-description">Description</div>
+            <div class="product-stock" id="product-stock">Stock: 16</div><br>
+            <div class="quantity-selector">
+                <button>-</button>
+                <input type="number" value="1">
+                <button>+</button>
+            </div>
+            <button class="buy-button">Buy</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Retroplaces</p>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+</html>

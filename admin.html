@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RETROPLACE Admin Dashboard</title>
+  <link rel="stylesheet" href="css/ad_pro.css">
+</head>
+<body>
+  <nav class="topnav">              
+    <a href="/" class="nav-brand">RETROPLACE</a>
+    <a href="/" class="nav-link">Home</a>
+    <a href="/admin" class="nav-link">All User</a>
+    <a href="/All_products" class="nav-link">All Product</a>
+    <a href="/member" class="nav-link">Who we are</a>
+    <a href="#" onclick="signOut()" class="nav-link">Logout</a>
+  </nav>
+
+  <div class="container">
+    <div class="header">    
+      <h1>Admin page</h1>
+    </div>
+    <div class="content">
+      <button type="button" onclick="userinfo()"><h2>User Status Management</h2></button> 
+      <table id="user-table">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows will be dynamically added here -->
+        </tbody>
+      </table>  
+    </div>
+    <div class="footer">
+      &copy; 2024 Our Store All rights reserved
+    </div>
+  </div>
+
+  <script>
+async function userinfo() {
+  const table = document.getElementById("user-table");
+
+  // Clear existing table rows except the header row
+  while (table.rows.length > 1) {
+    table.deleteRow(1);
+  }
+
+  const userurl = "http://localhost:3030/user_info";
+  try {
+
+    const response = await fetch(userurl);
+    const responseData = await response.json();
+
+    console.log(responseData); 
+
+    if (responseData && responseData.results) {
+      for (const result of responseData.results) {
+        const row = table.insertRow(); // Insert a new row
+
+        const emailCell = row.insertCell(); // Insert cells for email, username, and password
+        const usernameCell = row.insertCell();
+        const passwordCell = row.insertCell();
+        const updateCell = row.insertCell(); // Insert cell for update button
+        const deleteCell = row.insertCell(); // Insert cell for delete button
+
+        emailCell.textContent = result.user_email; // Set cell content to corresponding user data
+        usernameCell.textContent = result.username;
+        passwordCell.textContent = result.user_password;
+        
+        const updateButton = document.createElement("button");
+        updateButton.textContent = "Update";
+        updateButton.onclick = function() {
+
+        };
+        updateCell.appendChild(updateButton);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = function() {
+        };
+        deleteCell.appendChild(deleteButton);
+      }
+    } else {
+      console.error("Invalid JSON response format"); // Log an error if the JSON response format is invalid
+    }
+  } catch (error) {
+    console.error("Error fetching user data:", error); // Log any errors that occur during the fetch request
+  }
+}
+
+userinfo();
+    </script>
+    
+</body>
+</html>

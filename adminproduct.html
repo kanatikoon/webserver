@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RETROPLACE Admin Dashboard</title>
+  <link rel="stylesheet" href="css/ad_pro.css">
+</head>
+<body>
+  <nav class="topnav">
+    <a href="/Homepage" class="nav-brand">RETROPLACE</a>
+    <a href="/Homepage" class="nav-link">Home</a>
+    <a href="/search" class="nav-link">Search</a>
+    <a href="/All_products" class="nav-link">All Product</a>
+    <a href="/member" class="nav-link">Who we are</a>
+    <a href="#" onclick="signOut()" class="nav-link">Logout</a>
+  </nav>
+
+  <div class="container">
+    <div class="header">
+      <h1>Admin page</h1>
+    </div>
+    <div class="content">
+      <h2>Manage Products</h2>
+<div class="filter-section">
+  <div class="filter-item">
+    <label for="productNameInput">Product Name:</label>
+    <input type="text" id="productNameInput" placeholder="Enter product name">
+  </div>
+  <div class="filter-item">
+    <label for="categorySelect">Category:</label>
+    <select id="categorySelect">
+      <option value="">All Categories</option>
+      <option value="clothing">Clothing</option>
+      <option value="accessories">Accessories</option>
+      <option value="homeware">Homeware</option>
+    </select>
+  </div>
+  <div class="filter-item">
+    <label for="sortBySelect">Sort By:</label>
+    <select id="sortBySelect">
+      <option value="id">Product ID</option>
+      <option value="name">Product Name</option>
+      <option value="price">Price</option>
+    </select>
+  </div>
+</div>
+
+
+      <table id="product-table">
+        <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be dynamically added here -->
+      </tbody>
+    </table>  
+
+    <div class="footer">
+      &copy; 2024 Our Store All rights reserved
+    </div>
+  </div>
+
+  <script>
+//     async function userinfo() {
+//   const table = document.getElementById("user-table");
+
+//   // Clear existing table rows except the header row
+//   while (table.rows.length > 1) {
+//     table.deleteRow(1);
+//   }
+
+//   const userurl = "http://localhost:3030/user_info";
+//   try {
+
+//     const response = await fetch(userurl);
+//     const responseData = await response.json();
+
+//     console.log(responseData); 
+
+//     if (responseData && responseData.results) {
+//       for (const result of responseData.results) {
+//         const row = table.insertRow(); // Insert a new row
+
+//         const emailCell = row.insertCell(); // Insert cells for email, username, and password
+//         const usernameCell = row.insertCell();
+//         const passwordCell = row.insertCell();
+//         const updateCell = row.insertCell(); // Insert cell for update button
+//         const deleteCell = row.insertCell(); // Insert cell for delete button
+
+//         emailCell.textContent = result.user_email; // Set cell content to corresponding user data
+//         usernameCell.textContent = result.username;
+//         passwordCell.textContent = result.user_password;
+        
+//         // Create update button
+//         const updateButton = document.createElement("button");
+//         updateButton.textContent = "Update";
+//         updateButton.onclick = function() {
+//           // Add your update logic here, bro
+//         };
+//         updateCell.appendChild(updateButton);
+
+//         // Create delete button
+//         const deleteButton = document.createElement("button");
+//         deleteButton.textContent = "Delete";
+//         deleteButton.onclick = function() {
+//           // Add your delete logic here, bro
+//         };
+//         deleteCell.appendChild(deleteButton);
+//       }
+//     } else {
+//       console.error("Invalid JSON response format"); // Log an error if the JSON response format is invalid
+//     }
+//   } catch (error) {
+//     console.error("Error fetching user data:", error); // Log any errors that occur during the fetch request
+//   }
+// }
+
+// userinfo();
+//   </script>
+</body>
+</html>
