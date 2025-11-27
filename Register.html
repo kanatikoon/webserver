@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="css/Log_rig.css">
+</head>
+<nav class="topnav">  
+    <a href="/" class="nav-brand">RETROPLACE</a>
+    <a href="/Homepage" class="nav-link">Home</a>
+    <a href="/About-Us" class="nav-link">About Us</a>
+    <a href="/Log-in" class="login">Login</a>
+</nav>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Register</h1>
+            <form id = registerForm>
+                <div class="input-group">
+                    <label for="email" class="input-label">Email&nbsp;</label>
+                    <input type="email" id="email" name="email" class="password-input">
+                </div> 
+                <div class="input-group">
+                    <label for="username" class="input-label">Username&nbsp;</label>
+                    <input type="text" id="username" name="username" class="username-input">
+                </div>
+                <div class="input-group">
+                    <label for="password" class="input-label">Password&nbsp;</label>
+                    <input type="password" id="password" name="password" class="password-input">
+                </div>                    
+                <div class="button-group">
+                    <button>Register</button>
+                </div>                
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        
+        const email = document.getElementById('email').value;
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        const jsonData = {
+            email: email,
+            username: username,
+            password: password
+        };
+
+        fetch('/user_post', {
+        method: 'POST',
+         headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(jsonData)
+})
+.then(response => response.text()) 
+.then(message => {
+    // Handle the response from the server
+    alert(message); // Show the response message directly in an alert
+})
+.catch(error => {
+    console.error('Error:', error);
+    alert('An error occurred while registering. Please try again later.'); // Show error message
+});
+    });
+</script>
+</html>

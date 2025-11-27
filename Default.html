@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css\home_page.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, shrink-to-fit=0">
+    <title>RETROPLACE Home Page</title>
+</head>
+<body>
+    <div id="main">
+        <header>
+            <nav class="topnav">  
+                <a href="/" class="nav-brand">Retroplace</a>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/member" class="nav-link">Who we are</a>
+                <a type="button" href="/Log-in" class="login">Login</a>
+            </nav>
+        </header>
+        <h1 class ="wbr">Welcome to Retroplace</h1>
+        <div role="content" class="container">
+            
+            <div class="home_ads">
+    
+                <div class="home_ads_content"><img id="ad1"src="image/banner ads/ad1.jpg"></div>
+            </div>
+            <div class="Home_Category">
+                <div class="Home_Category_content">
+                    <div class="Home_Category_text">Category</div>
+                    <div class="Category_pic">
+                        <ul class="Category-image_item-list">
+                            <li class="Category-image_item">
+                                <a id="ca01" href="#" class="ca-Image-Carousel-item">
+                                    <div class="Image-Carousel-item-containner">
+                                        <div class="Image-Carousel-item-scr">
+                                            <img class="Image-Carousel-item-scr-image" src="image/category/clothes.jpg">
+                                        </div>
+                                        <div class="Carousel-item-text">clothes</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="Category-image_item">
+                                <a id="ca02" href="#" class="ca-Image-Carousel-item" >
+                                    <div class="Image-Carousel-item-containner">
+                                        <div class="Image-Carousel-item-scr">
+                                            <img class="Image-Carousel-item-scr-image" src="image/category/digital.png">
+                                        </div>
+                                        <div class="Carousel-item-text">Digital</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="Category-image_item">
+                                <a id="ca03" href="#" class="ca-Image-Carousel-item" >
+                                    <div class="Image-Carousel-item-containner">
+                                        <div class="Image-Carousel-item-scr">
+                                            <img class="Image-Carousel-item-scr-image" src="image/category/book.png">
+                                        </div>
+                                        <div class="Carousel-item-text">Books</div>
+                                </a>
+                            </li>
+                            <li class="Category-image_item">
+                                <a id="ca04" href="#" class="ca-Image-Carousel-item" >
+                                    <div class="Image-Carousel-item-containner">
+                                        <div class="Image-Carousel-item-scr">
+                                            <img class="Image-Carousel-item-scr-image" src="image/category/Kitchen ware.png">
+                                        </div>
+                                        <div class="Carousel-item-text">Kitchen were</div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="Category-image_item">
+                                <a id="ca05" href="#" class="ca-Image-Carousel-item" >
+                                    <div class="Image-Carousel-item-containner">
+                                        <div class="Image-Carousel-item-scr">
+                                            <img class="Image-Carousel-item-scr-image" src="image/category/sport.png">
+                                        </div>
+                                        <div class="Carousel-item-text">Sport</div>
+                                </a>
+                            </li>
+                            <li class="Category-image_item">
+                                <a id="ca06" href="#" class="ca-Image-Carousel-item" >
+                                    <div class="Image-Carousel-item-containner">
+                                        <div class="Image-Carousel-item-scr">
+                                            <img class="Image-Carousel-item-scr-image" src="image/category/Funiture.jpg">
+                                        </div>
+                                        <div class="Carousel-item-text">Furniture</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                        <div class="Category-left-bg" onclick="cateOnButton(0)">
+                            <button class="ca-left" onclick="cateOnButton(0)"></button>
+                        </div>
+                        <div class="Category-right-bg" onclick="cateOnButton(1)">
+                            <button class="ca-right" onclick="cateOnButton(1)"></button>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="Home_Recommend">
+                <div class="Home_Recommend_content">
+                    <div class="Home_Recommend_text">Recommend</div>
+                    <div class="Recommend_pic">
+                        <ul class="Recommend-image_item-list">
+                            <li class="Recommend-image_item">
+                                <a href="/product1" class="Image-Carousel-item" >
+                                    <div class="Image-Carousel-item-container">
+                                        <div class="Image-product"><img id="sug" src="image/sug/c.png"></div>
+                                        <div class="text-product">Name:Long White Dress  <br>Price: 300.05<br>Category: Women-clothing</div>
+                                    </div>
+                                </a>                                                                   
+                            </li>
+                            <li class="Recommend-image_item">
+                                <a href="/product2" class="Image-Carousel-item" >
+                                    <div class="Image-Carousel-item-container">
+                                        <div class="Image-product"><img id="sug" src="image/sug/sug6.jpg"></div>
+                                        <div class="text-product">Name:Nikon Camera <br>Price: 15000.00<br>Category: Electronics</div>
+                                    </div>
+                                </a>                                                                   
+                            </li>
+                            <li class="Recommend-image_item">
+                                <a href="/product3" class="Image-Carousel-item" >
+                                    <div class="Image-Carousel-item-container">
+                                        <div class="Image-product"><img id="sug" src="image/sug/sug5.jpg"></div>
+                                        <div class="text-product">Name: Sofa King <br>Price: 1000.65 Baht<br>Category:Furniture</div>
+                                    </div>
+                                </a>                                                                   
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>                
+            </div>
+        </div>
+    </div>
+        
+        <footer>
+            &copy; 2024 Our Store All rights reserved
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+         document.body.addEventListener('click', function(event) {
+        if (event.target.tagName === 'BUTTON' || (event.target.tagName === 'A' && event.target.classList.contains('Image-Carousel-item'))){
+            alert('Require login');
+        }
+    });
+});
+    </script>
+</body>
+</html>
+    
